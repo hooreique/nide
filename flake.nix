@@ -22,9 +22,9 @@
 
         HASH=$(sha256sum <<< "$DIR" | cut -c1-8)
 
-        mkdir -p "$HOME/.nix-devshells"
+        mkdir -p "$HOME/.nide"
 
-        nix develop --profile "$HOME/.nix-devshells/$NAME-$HASH" --command "$@"
+        nix develop --profile "$HOME/.nide/$NAME-$HASH" --command "$@"
       '';
     };
   });
